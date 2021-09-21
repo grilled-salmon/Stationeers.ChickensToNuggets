@@ -8,7 +8,7 @@ namespace ChickensToNuggets.Scripts
 {
     public static class ModReference
     {
-        public static string WorkshopId = "";
+        public static string WorkshopId = "2608006963";
 
         public static string Name = "ChickensToNuggets";
     }

@@ -45,9 +45,9 @@ namespace ChickensToNuggets.Scripts
 				{
 					BakedPotato chickenNugget = Thing.AllPrefabs.Find(x => x.PrefabName == "ItemPotatoBaked") as BakedPotato;
 					DynamicThing dynamicThing = Thing.Create<DynamicThing>(chickenNugget, __instance.Position, __instance.Rotation);
-					dynamicThing.name = "Chicken Nugget";
 					NetworkManagerOverride.HandleSpawn(dynamicThing.gameObject);
 					OnServer.MoveToWorld(dynamicThing);
+					InventoryManager.Parent.CallCmdRenameThing(dynamicThing.netId, "Chicken Nugget");
 					NetworkServer.Destroy(__instance.gameObject);
 
 					__result = DynamicThingPatch.AttackWith(__instance, attack, doAction);
